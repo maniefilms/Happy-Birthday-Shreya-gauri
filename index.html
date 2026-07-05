@@ -1,0 +1,3723 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Adedayo — CrownOfJoy 👑</title>
+
+    <!-- Social Meta -->
+    <meta
+      property="og:title"
+      content="Happy Birthday Adedayo — CrownOfJoy 👑"
+    />
+    <meta
+      property="og:description"
+      content="To Adedayo — CrownOfJoy — You carry warmth everywhere you go. Happy Birthday, our Crown."
+    />
+    <meta property="og:url" content="https://www.onspace.ai" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Adeperl Innovations" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Happy Birthday Adedayo — CrownOfJoy 👑"
+    />
+    <meta
+      name="twitter:description"
+      content="To Adedayo — CrownOfJoy — You carry warmth everywhere you go. Happy Birthday, our Crown."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop"
+    />
+    <meta name="twitter:url" content="https://www.onspace.ai" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Nunito:wght@300;400;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <style>
+      /* ═══════════════════════════════════════════
+       ROOT VARIABLES & BASE
+    ═══════════════════════════════════════════ */
+      :root {
+        --gold: #c9a84c;
+        --gold-light: #e8c97a;
+        --gold-dark: #a07830;
+        --champagne: #f5e6c8;
+        --black-deep: #0a0a0a;
+        --blush: #e8748a;
+        --dusty-pink: #f2b5c0;
+        --soft-white: #fff8f8;
+        --deep-purple: #2d0057;
+        --violet: #9b59b6;
+        --silver: #d4d4d4;
+        --coral: #f0997b;
+        --peach: #ffb347;
+        --orange: #ff6b35;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--black-deep);
+        font-family: "Lato", "Nunito", sans-serif;
+        color: var(--champagne);
+        overflow-x: hidden;
+      }
+
+      /* ═══════════════════════════════════════════
+       FLOATING PETALS
+    ═══════════════════════════════════════════ */
+      .petal {
+        position: fixed;
+        top: -30px;
+        font-size: 18px;
+        animation: petalFall linear infinite;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.7;
+      }
+
+      @keyframes petalFall {
+        0% {
+          transform: translateY(-30px) rotate(0deg) translateX(0);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translateY(50vh) rotate(180deg) translateX(30px);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateY(110vh) rotate(360deg) translateX(-20px);
+          opacity: 0;
+        }
+      }
+
+      /* ═══════════════════════════════════════════
+       SECTION 1 — HERO
+    ═══════════════════════════════════════════ */
+      #hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        min-height: 640px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      /* Hero background image — sharp, high-quality */
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url("");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: 0;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        transform: scale(1.02); /* slight upscale to prevent edge blur */
+      }
+
+      /* Hero background VIDEO — muted ambient loop */
+      .hero-bg-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 0.82;
+        pointer-events: none;
+        filter: none;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          170deg,
+          rgba(10, 10, 10, 0.5) 0%,
+          rgba(45, 0, 87, 0.28) 30%,
+          rgba(10, 10, 10, 0.1) 55%,
+          rgba(10, 10, 10, 0.65) 100%
+        );
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 0 20px;
+        max-width: 960px;
+        width: 100%;
+      }
+
+      /* Frosted text backdrop for readability */
+      .hero-text-backdrop {
+        display: inline-block;
+        background: rgba(10, 10, 10, 0.18);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border-radius: 24px;
+        padding: 32px 28px 36px;
+        width: 100%;
+      }
+
+      @media (max-width: 480px) {
+        .hero-text-backdrop {
+          padding: 24px 16px 28px;
+          border-radius: 18px;
+        }
+      }
+
+      .crown-icon {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        color: var(--gold);
+        display: block;
+        opacity: 0;
+        filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.8));
+        animation:
+          crownDrop 1s ease 0.3s forwards,
+          crownFloat 3s ease-in-out 1.5s infinite;
+      }
+
+      @keyframes crownDrop {
+        from {
+          opacity: 0;
+          transform: translateY(-80px) scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes crownFloat {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-12px) scale(1.05);
+        }
+      }
+
+      .happy-birthday-text {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: clamp(1.25rem, 4.5vw, 2.6rem);
+        color: #fff0f5;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        opacity: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid var(--blush);
+        width: 0;
+        margin: 0 auto 10px;
+        text-shadow:
+          0 2px 18px rgba(232, 116, 138, 0.7),
+          0 0 40px rgba(255, 255, 255, 0.2);
+      }
+
+      .happy-birthday-text.typing {
+        animation:
+          typewriter 2s steps(25) 1s forwards,
+          blinkCursor 0.8s step-end infinite;
+      }
+
+      @keyframes typewriter {
+        from {
+          width: 0;
+          opacity: 1;
+        }
+        to {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+
+      @keyframes blinkCursor {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: var(--blush);
+        }
+      }
+
+      .name-adedayo {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        font-size: clamp(3.8rem, 15vw, 10rem);
+        line-height: 1;
+        background: linear-gradient(
+          135deg,
+          #c9a84c 0%,
+          #fff0c0 25%,
+          #e8c97a 45%,
+          #fffbe8 60%,
+          #c9a84c 75%,
+          #f5e6c8 100%
+        );
+        background-size: 300% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: goldShimmer 4s linear 2s infinite;
+        opacity: 0;
+        filter: drop-shadow(0 4px 24px rgba(201, 168, 76, 0.8))
+          drop-shadow(0 0 60px rgba(201, 168, 76, 0.4));
+      }
+
+      .name-adedayo.visible {
+        opacity: 1;
+      }
+
+      @keyframes goldShimmer {
+        0% {
+          background-position: 0% center;
+        }
+        100% {
+          background-position: 300% center;
+        }
+      }
+
+      .crown-of-joy {
+        font-family: "Dancing Script", cursive;
+        font-weight: 700;
+        font-size: clamp(1.7rem, 5.5vw, 3.6rem);
+        color: #ffe0ec;
+        letter-spacing: 0.08em;
+        opacity: 0;
+        margin-top: 4px;
+        text-shadow:
+          0 2px 20px rgba(232, 116, 138, 0.8),
+          0 0 50px rgba(232, 116, 138, 0.35);
+      }
+
+      .you-are-loved {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: clamp(1.15rem, 3.5vw, 2rem);
+        color: #fff8f0;
+        letter-spacing: 0.15em;
+        margin-top: 20px;
+        opacity: 0;
+        text-shadow:
+          0 2px 16px rgba(245, 230, 200, 0.7),
+          0 0 35px rgba(255, 255, 255, 0.2);
+      }
+
+      .heart-glow {
+        display: inline-block;
+        color: var(--blush);
+        animation: heartPulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes heartPulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.3);
+        }
+      }
+
+      /* Scroll indicator */
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        opacity: 0;
+        animation: fadeInUp 1s ease 4s forwards;
+      }
+
+      .scroll-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+        animation: scrollBounce 1.5s ease-in-out infinite;
+      }
+
+      .scroll-dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .scroll-dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: translateY(0);
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(6px);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateX(-50%) translateY(15px);
+        }
+        to {
+          opacity: 0.8;
+          transform: translateX(-50%) translateY(0);
+        }
+      }
+
+      /* Confetti canvas */
+      #confetti-canvas {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      /* ═══════════════════════════════════════════
+       SECTION SHARED STYLES
+    ═══════════════════════════════════════════ */
+      section {
+        position: relative;
+        padding: 80px 20px;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: clamp(1.8rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 12px;
+        opacity: 0;
+      }
+
+      .gold-underline {
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          var(--gold-light),
+          var(--gold),
+          transparent
+        );
+        margin: 0 auto 50px;
+        opacity: 0;
+        border-radius: 2px;
+        box-shadow: 0 0 12px rgba(201, 168, 76, 0.5);
+      }
+
+      /* ═══════════════════════════════════════════
+       SECTION 2 — PHOTO GALLERY
+    ═══════════════════════════════════════════ */
+      #gallery {
+        background: linear-gradient(
+          180deg,
+          #0a0a0a 0%,
+          #120020 50%,
+          #0a0a0a 100%
+        );
+      }
+
+      .gallery-grid {
+        columns: 3;
+        column-gap: 16px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
+        .gallery-grid {
+          columns: 2;
+          column-gap: 10px;
+        }
+      }
+      @media (max-width: 480px) {
+        .gallery-grid {
+          columns: 1;
+        }
+      }
+
+      .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 16px;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow:
+          0 0 0 3px var(--gold),
+          0 0 30px rgba(201, 168, 76, 0.4),
+          0 20px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      .gallery-img {
+        width: 100%;
+        display: block;
+        border-radius: 16px;
+        transition: transform 0.5s ease;
+        filter: brightness(0.92) saturate(1.1);
+      }
+
+      .gallery-item:hover .gallery-img {
+        transform: scale(1.06);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(201, 168, 76, 0) 0%,
+          rgba(45, 0, 87, 0) 100%
+        );
+        transition: background 0.4s ease;
+        border-radius: 16px;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 168, 76, 0.15) 0%,
+          rgba(45, 0, 87, 0.3) 100%
+        );
+      }
+
+      /* Lightbox */
+      #lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.92);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(6px);
+      }
+
+      #lightbox.active {
+        display: flex;
+      }
+
+      #lightbox img {
+        max-width: 90vw;
+        max-height: 88vh;
+        border-radius: 16px;
+        border: 2px solid var(--gold);
+        box-shadow: 0 0 60px rgba(201, 168, 76, 0.3);
+        animation: lightboxIn 0.3s ease;
+      }
+
+      @keyframes lightboxIn {
+        from {
+          opacity: 0;
+          transform: scale(0.85);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      #lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        font-size: 2.5rem;
+        color: var(--gold);
+        cursor: pointer;
+        line-height: 1;
+        transition: transform 0.2s;
+        font-family: sans-serif;
+      }
+
+      #lightbox-close:hover {
+        transform: rotate(90deg) scale(1.2);
+      }
+
+      #lightbox-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: "Dancing Script", cursive;
+        font-size: 1.3rem;
+        color: var(--champagne);
+        text-shadow: 0 0 10px rgba(245, 230, 200, 0.6);
+      }
+
+      /* ═══════════════════════════════════════════
+       SECTION 3 — VIDEO MEMORIES
+    ═══════════════════════════════════════════ */
+      #videos {
+        background: linear-gradient(
+          180deg,
+          #0a0a0a 0%,
+          #1a0a2e 40%,
+          #0a0a0a 100%
+        );
+      }
+
+      .video-title {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: clamp(1.8rem, 5vw, 3.5rem);
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          var(--blush),
+          var(--gold-light),
+          var(--dusty-pink)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 12px;
+        opacity: 0;
+      }
+
+      .video-wrapper {
+        max-width: 1000px;
+        margin: 0 auto 30px;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow:
+          0 0 0 2px rgba(201, 168, 76, 0.4),
+          0 0 40px rgba(155, 89, 182, 0.3),
+          0 20px 60px rgba(0, 0, 0, 0.6);
+        animation: borderGlow 3s ease-in-out infinite;
+        opacity: 0;
+      }
+
+      @keyframes borderGlow {
+        0%,
+        100% {
+          box-shadow:
+            0 0 0 2px rgba(201, 168, 76, 0.4),
+            0 0 40px rgba(155, 89, 182, 0.3),
+            0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+        50% {
+          box-shadow:
+            0 0 0 3px rgba(201, 168, 76, 0.7),
+            0 0 60px rgba(201, 168, 76, 0.4),
+            0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      .video-wrapper video {
+        width: 100%;
+        display: block;
+        border-radius: 20px;
+        aspect-ratio: 16/9;
+        min-height: 480px;
+        background: #1a1a2e;
+        object-fit: cover;
+      }
+
+      /* Custom video controls — hidden (videos autoplay on scroll, no manual controls) */
+      .video-controls {
+        display: none !important;
+      }
+
+      .video-card-secondary {
+        max-width: 500px;
+        margin: 0 auto;
+        border-radius: 20px;
+        overflow: hidden;
+        opacity: 0;
+      }
+
+      /* ═══════════════════════════════════════════
+       SECTION 4 — PERSONAL MESSAGE
+    ═══════════════════════════════════════════ */
+      #message {
+        background: linear-gradient(
+          135deg,
+          #0a0a0a 0%,
+          #1a0030 30%,
+          #2d0057 60%,
+          #1a0030 80%,
+          #0a0a0a 100%
+        );
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .bokeh-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+        opacity: 0.25;
+      }
+
+      .quote-marks {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(5rem, 15vw, 10rem);
+        color: var(--gold);
+        line-height: 0.6;
+        display: block;
+        opacity: 0.7;
+        filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.4));
+      }
+
+      .message-text {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.1rem, 2.8vw, 1.7rem);
+        line-height: 1.9;
+        color: var(--champagne);
+        max-width: 750px;
+        margin: 0 auto;
+        text-shadow: 0 0 20px rgba(245, 230, 200, 0.2);
+        opacity: 0;
+      }
+
+      .message-signature {
+        font-family: "Great Vibes", cursive;
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        color: var(--blush);
+        margin-top: 30px;
+        text-shadow: 0 0 20px rgba(232, 116, 138, 0.5);
+        display: block;
+        opacity: 0;
+      }
+
+      /* Floating sparkles */
+      .sparkle {
+        position: absolute;
+        pointer-events: none;
+        animation: sparkleTwinkle ease-in-out infinite;
+        font-size: 16px;
+      }
+
+      @keyframes sparkleTwinkle {
+        0%,
+        100% {
+          opacity: 0.2;
+          transform: scale(0.7) rotate(0deg);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.3) rotate(180deg);
+        }
+      }
+
+      /* ═══════════════════════════════════════════
+       SECTION 5 — MUSIC PLAYER
+    ═══════════════════════════════════════════ */
+      #music {
+        background: linear-gradient(
+          180deg,
+          #0a0a0a 0%,
+          #0f0018 50%,
+          #0a0a0a 100%
+        );
+      }
+
+      .music-player-card {
+        max-width: 600px;
+        margin: 0 auto;
+        background: linear-gradient(
+          135deg,
+          rgba(45, 0, 87, 0.6) 0%,
+          rgba(10, 10, 10, 0.9) 100%
+        );
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow:
+          0 0 60px rgba(155, 89, 182, 0.2),
+          inset 0 1px 0 rgba(201, 168, 76, 0.2);
+        backdrop-filter: blur(10px);
+        opacity: 0;
+      }
+
+      .vinyl-wrapper {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 24px;
+      }
+
+      .vinyl-record {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at center,
+          #111 0%,
+          #1a1a1a 8%,
+          #222 9%,
+          #111 10%,
+          #1a1a1a 25%,
+          #111 26%,
+          #1a1a1a 40%,
+          #111 41%,
+          #1a1a1a 55%,
+          #111 56%,
+          #1a1a1a 70%,
+          #111 71%,
+          #1a1a1a 100%
+        );
+        box-shadow:
+          0 0 0 3px var(--gold-dark),
+          0 0 30px rgba(201, 168, 76, 0.3),
+          0 8px 30px rgba(0, 0, 0, 0.8);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .vinyl-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--gold),
+          var(--gold-dark),
+          var(--champagne)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.45rem;
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: var(--black-deep);
+        text-align: center;
+        letter-spacing: 0.05em;
+        line-height: 1.2;
+      }
+
+      .vinyl-needle {
+        position: absolute;
+        top: -5px;
+        right: -15px;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--silver), var(--gold));
+        transform-origin: right center;
+        transform: rotate(-35deg);
+        border-radius: 2px 0 0 2px;
+        transition: transform 0.5s ease;
+        z-index: 2;
+      }
+
+      .vinyl-needle::before {
+        content: "";
+        position: absolute;
+        right: -4px;
+        top: -10px;
+        width: 8px;
+        height: 23px;
+        background: linear-gradient(180deg, var(--silver), var(--gold));
+        border-radius: 4px 4px 0 0;
+      }
+
+      .vinyl-spinning {
+        animation: vinylSpin 3s linear infinite;
+      }
+
+      @keyframes vinylSpin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .song-title {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        font-size: 1.15rem;
+        color: var(--champagne);
+        text-align: center;
+        margin-bottom: 4px;
+      }
+
+      .song-subtitle {
+        font-family: "Dancing Script", cursive;
+        font-size: 1rem;
+        color: var(--blush);
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Equalizer bars */
+      .equalizer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 4px;
+        height: 36px;
+        margin-bottom: 20px;
+      }
+
+      .eq-bar {
+        width: 6px;
+        border-radius: 3px 3px 0 0;
+        background: linear-gradient(180deg, var(--gold), var(--violet));
+        height: 8px;
+        transition: height 0.15s ease;
+      }
+
+      .eq-bar.active {
+        animation: eqPulse 0.6s ease-in-out infinite;
+      }
+      .eq-bar:nth-child(1).active {
+        animation-delay: 0s;
+      }
+      .eq-bar:nth-child(2).active {
+        animation-delay: 0.1s;
+      }
+      .eq-bar:nth-child(3).active {
+        animation-delay: 0.2s;
+      }
+      .eq-bar:nth-child(4).active {
+        animation-delay: 0.05s;
+      }
+      .eq-bar:nth-child(5).active {
+        animation-delay: 0.15s;
+      }
+      .eq-bar:nth-child(6).active {
+        animation-delay: 0.25s;
+      }
+      .eq-bar:nth-child(7).active {
+        animation-delay: 0.08s;
+      }
+      .eq-bar:nth-child(8).active {
+        animation-delay: 0.18s;
+      }
+      .eq-bar:nth-child(9).active {
+        animation-delay: 0.03s;
+      }
+      .eq-bar:nth-child(10).active {
+        animation-delay: 0.22s;
+      }
+
+      @keyframes eqPulse {
+        0%,
+        100% {
+          height: 8px;
+        }
+        50% {
+          height: var(--peak, 28px);
+        }
+      }
+
+      .music-progress {
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 2px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .music-progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--violet), var(--gold));
+        border-radius: 2px;
+        transition: width 0.5s linear;
+      }
+
+      .music-time-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        color: var(--silver);
+        font-family: "Lato", sans-serif;
+        margin-bottom: 20px;
+      }
+
+      .music-controls-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .music-play-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        border: none;
+        color: var(--black-deep);
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 25px rgba(201, 168, 76, 0.5);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .music-play-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px rgba(201, 168, 76, 0.8);
+      }
+
+      .music-icon-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        color: var(--champagne);
+        font-size: 0.85rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+      }
+
+      .music-icon-btn:hover {
+        background: rgba(201, 168, 76, 0.2);
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+
+      /* ═══════════════════════════════════════════
+       SECTION 6 — CELEBRATION
+    ═══════════════════════════════════════════ */
+      #celebration {
+        background: linear-gradient(
+          135deg,
+          #0a0a0a 0%,
+          #1a0010 30%,
+          #2d0015 60%,
+          #0a0a0a 100%
+        );
+        text-align: center;
+      }
+
+      .age-banner {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        font-size: clamp(1.5rem, 5vw, 3rem);
+        color: var(--champagne);
+        margin-bottom: 16px;
+        opacity: 0;
+      }
+
+      .age-number {
+        font-size: clamp(3rem, 12vw, 7rem);
+        background: linear-gradient(
+          135deg,
+          var(--gold),
+          var(--champagne),
+          var(--gold-light)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: inline-block;
+        font-weight: 900;
+      }
+
+      /* Birthday Cake */
+      .cake-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px auto;
+        cursor: pointer;
+        position: relative;
+        width: 200px;
+      }
+
+      .cake-candles {
+        display: flex;
+        gap: 18px;
+        margin-bottom: 0;
+        align-items: flex-end;
+      }
+
+      .candle {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .candle-body {
+        width: 14px;
+        height: 50px;
+        border-radius: 4px 4px 2px 2px;
+      }
+
+      .candle:nth-child(1) .candle-body {
+        background: linear-gradient(180deg, var(--blush), #c05070);
+      }
+      .candle:nth-child(2) .candle-body {
+        background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+      }
+      .candle:nth-child(3) .candle-body {
+        background: linear-gradient(180deg, var(--violet), var(--deep-purple));
+      }
+      .candle:nth-child(4) .candle-body {
+        background: linear-gradient(180deg, var(--coral), var(--orange));
+      }
+
+      .candle-wick {
+        width: 2px;
+        height: 8px;
+        background: #555;
+        margin-bottom: -2px;
+      }
+
+      .flame {
+        width: 18px;
+        height: 26px;
+        background: radial-gradient(
+          ellipse at 50% 80%,
+          #fff8e1 0%,
+          #ffcc00 25%,
+          #ff9500 55%,
+          #ff4500 80%,
+          transparent 100%
+        );
+        border-radius: 50% 50% 30% 30%;
+        filter: blur(1px);
+        animation: flameFlicker 0.4s ease-in-out infinite alternate;
+        transform-origin: bottom center;
+        box-shadow:
+          0 0 15px 5px rgba(255, 150, 0, 0.5),
+          0 0 30px 10px rgba(255, 70, 0, 0.25);
+      }
+
+      @keyframes flameFlicker {
+        from {
+          transform: scaleX(0.9) scaleY(1) rotate(-3deg);
+          opacity: 0.9;
+        }
+        to {
+          transform: scaleX(1.1) scaleY(1.05) rotate(3deg);
+          opacity: 1;
+        }
+      }
+
+      .flame.blown-out {
+        animation: blowOut 0.5s ease forwards;
+      }
+
+      @keyframes blowOut {
+        0% {
+          opacity: 1;
+          transform: scaleX(1) scaleY(1);
+        }
+        30% {
+          transform: scaleX(3) scaleY(0.3) translateX(10px);
+          opacity: 0.7;
+        }
+        100% {
+          opacity: 0;
+          transform: scaleX(0) scaleY(0);
+        }
+      }
+
+      /* Smoke puff */
+      .smoke {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(200, 200, 200, 0.5);
+        display: none;
+        animation: smokePuff 1.5s ease forwards;
+      }
+
+      .flame.blown-out ~ .smoke {
+        display: block;
+      }
+
+      @keyframes smokePuff {
+        0% {
+          opacity: 0.8;
+          transform: translateX(-50%) translateY(0) scale(0.5);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(-40px) scale(2.5);
+        }
+      }
+
+      /* Cake body */
+      .cake-body {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cake-tier-top {
+        width: 120px;
+        height: 44px;
+        background: linear-gradient(180deg, #f2b5c0 0%, #e8748a 100%);
+        border-radius: 8px 8px 0 0;
+        position: relative;
+        border-top: 4px solid var(--dusty-pink);
+      }
+
+      .cake-tier-top::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -4px;
+        right: -4px;
+        height: 14px;
+        background: repeating-linear-gradient(
+          90deg,
+          #fff 0px,
+          #fff 8px,
+          var(--blush) 8px,
+          var(--blush) 16px
+        );
+        border-radius: 6px;
+      }
+
+      .cake-tier-bottom {
+        width: 200px;
+        height: 56px;
+        background: linear-gradient(180deg, #c9a84c 0%, #a07830 100%);
+        border-radius: 0 0 12px 12px;
+        position: relative;
+        border-top: 4px solid var(--gold-light);
+      }
+
+      .cake-tier-bottom::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -4px;
+        right: -4px;
+        height: 14px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--champagne) 0px,
+          var(--champagne) 10px,
+          var(--gold) 10px,
+          var(--gold) 20px
+        );
+        border-radius: 6px;
+      }
+
+      .cake-plate {
+        width: 220px;
+        height: 12px;
+        background: linear-gradient(180deg, #e8e8e8, #b0b0b0);
+        border-radius: 50%;
+        margin-top: -4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      .cake-decoration {
+        position: absolute;
+        font-size: 20px;
+      }
+
+      .make-wish-btn {
+        margin-top: 20px;
+        padding: 14px 36px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        border: none;
+        border-radius: 50px;
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--black-deep);
+        cursor: pointer;
+        letter-spacing: 0.05em;
+        box-shadow:
+          0 0 25px rgba(201, 168, 76, 0.4),
+          0 8px 20px rgba(0, 0, 0, 0.3);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        opacity: 0;
+      }
+
+      .make-wish-btn:hover {
+        transform: translateY(-3px) scale(1.04);
+        box-shadow:
+          0 0 40px rgba(201, 168, 76, 0.7),
+          0 12px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .wish-message {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+        color: var(--gold);
+        margin-top: 20px;
+        opacity: 0;
+        transform: scale(0.8);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+        text-shadow: 0 0 20px rgba(201, 168, 76, 0.6);
+      }
+
+      .wish-message.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* ═══════════════════════════════════════════
+       SECTION 7 — FOOTER
+    ═══════════════════════════════════════════ */
+      #footer {
+        background: linear-gradient(180deg, #0a0a0a 0%, #050508 100%);
+        text-align: center;
+        padding: 80px 20px 50px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .closing-quote {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: clamp(1.4rem, 4vw, 2.8rem);
+        color: var(--gold);
+        margin-bottom: 40px;
+        text-shadow: 0 0 30px rgba(201, 168, 76, 0.4);
+        opacity: 0;
+      }
+
+      .footer-credit {
+        font-family: "Lato", sans-serif;
+        font-size: 0.85rem;
+        color: rgba(212, 212, 212, 0.5);
+        letter-spacing: 0.05em;
+      }
+
+      .footer-credit span {
+        color: var(--blush);
+      }
+
+      /* Trailing hearts in footer */
+      .footer-heart-trail {
+        position: absolute;
+        pointer-events: none;
+        font-size: 16px;
+        animation: trailHeart 1.5s ease forwards;
+        z-index: 5;
+      }
+
+      @keyframes trailHeart {
+        0% {
+          opacity: 0.9;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -200%) scale(0.3);
+        }
+      }
+
+      /* ═══════════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════════ */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition:
+          background 0.4s,
+          padding 0.4s;
+      }
+
+      #navbar.scrolled {
+        background: rgba(10, 10, 10, 0.92);
+        backdrop-filter: blur(12px);
+        padding: 10px 24px;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      }
+
+      .nav-logo {
+        font-family: "Dancing Script", cursive;
+        font-size: 1.5rem;
+        color: var(--gold);
+        text-decoration: none;
+        text-shadow: 0 0 15px rgba(201, 168, 76, 0.5);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links a {
+        font-family: "Lato", sans-serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--champagne);
+        text-decoration: none;
+        opacity: 0.7;
+        transition:
+          opacity 0.2s,
+          color 0.2s;
+      }
+
+      .nav-links a:hover {
+        opacity: 1;
+        color: var(--gold);
+      }
+
+      @media (max-width: 640px) {
+        .nav-links {
+          display: none;
+        }
+      }
+
+      /* Responsive tweaks */
+      /* ═══════════════════════════════════════════
+       MOBILE & TABLET RESPONSIVENESS
+    ═══════════════════════════════════════════ */
+
+      /* --- Tablet (≤ 768px) --- */
+      @media (max-width: 768px) {
+        section {
+          padding: 56px 14px;
+        }
+
+        .section-title {
+          font-size: clamp(1.6rem, 6vw, 2.8rem);
+          margin-bottom: 10px;
+        }
+        .gold-underline {
+          margin-bottom: 36px;
+        }
+
+        /* Music player */
+        .music-player-card {
+          padding: 22px 16px 18px;
+          border-radius: 20px;
+        }
+        .vinyl-wrapper {
+          width: 130px;
+          height: 130px;
+          margin-bottom: 18px;
+        }
+        .vinyl-record {
+          width: 130px;
+          height: 130px;
+        }
+        .music-controls-row {
+          gap: 14px;
+        }
+        .music-play-btn {
+          width: 54px;
+          height: 54px;
+          font-size: 1.1rem;
+        }
+        .music-icon-btn {
+          width: 36px;
+          height: 36px;
+          font-size: 0.82rem;
+        }
+
+        /* Video controls always visible on touch */
+        .video-controls {
+          opacity: 1;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+          columns: 2;
+          column-gap: 10px;
+        }
+
+        /* Message */
+        .message-text {
+          font-size: clamp(1rem, 3.5vw, 1.4rem);
+          line-height: 1.85;
+        }
+        .message-signature {
+          font-size: clamp(1.5rem, 5vw, 2.2rem);
+        }
+        .quote-marks {
+          font-size: clamp(4rem, 12vw, 7rem);
+        }
+
+        /* Cake */
+        .cake-container {
+          width: 180px;
+        }
+        .cake-body,
+        .cake-plate {
+          width: 180px;
+        }
+        .cake-tier-bottom {
+          width: 180px;
+        }
+        .cake-candles {
+          gap: 14px;
+        }
+
+        /* Navbar */
+        #navbar {
+          padding: 12px 16px;
+        }
+        .nav-logo {
+          font-size: 1.3rem;
+        }
+
+        /* Footer */
+        #footer {
+          padding: 60px 16px 40px;
+        }
+        .closing-quote {
+          font-size: clamp(1.2rem, 5vw, 2rem);
+        }
+
+        /* Age banner */
+        .age-banner {
+          font-size: clamp(1.3rem, 5vw, 2.2rem);
+        }
+        .age-number {
+          font-size: clamp(2.8rem, 12vw, 5rem);
+        }
+
+        /* Make wish button */
+        .make-wish-btn {
+          padding: 12px 28px;
+          font-size: 1rem;
+        }
+
+        /* Playlist */
+        .playlist-item {
+          padding: 10px 12px;
+          gap: 10px;
+        }
+        .playlist-track-title {
+          font-size: 0.85rem;
+        }
+      }
+
+      /* --- Small mobile (≤ 480px) --- */
+      @media (max-width: 480px) {
+        section {
+          padding: 48px 12px;
+        }
+
+        /* Hero */
+        .hero-content {
+          padding: 0 12px;
+        }
+        .crown-icon {
+          font-size: clamp(2rem, 8vw, 3.5rem);
+        }
+        .name-adedayo {
+          font-size: clamp(3.2rem, 17vw, 6rem);
+        }
+        .crown-of-joy {
+          font-size: clamp(1.45rem, 6.5vw, 2.4rem);
+        }
+        .you-are-loved {
+          font-size: clamp(1rem, 4vw, 1.4rem);
+        }
+        .happy-birthday-text {
+          font-size: clamp(1rem, 4vw, 1.6rem);
+          letter-spacing: 0.18em;
+        }
+
+        /* Gallery — single column for very small */
+        .gallery-grid {
+          columns: 1;
+        }
+
+        /* Cake */
+        .cake-candles {
+          gap: 10px;
+        }
+        .cake-body,
+        .cake-plate {
+          width: 150px;
+        }
+        .cake-tier-bottom {
+          width: 150px;
+        }
+        .candle-body {
+          height: 42px;
+        }
+
+        /* Music player */
+        .music-player-card {
+          padding: 18px 12px 16px;
+          border-radius: 18px;
+        }
+        .vinyl-wrapper {
+          width: 115px;
+          height: 115px;
+        }
+        .vinyl-record {
+          width: 115px;
+          height: 115px;
+        }
+        .vinyl-label {
+          width: 44px;
+          height: 44px;
+          font-size: 0.4rem;
+        }
+        .music-play-btn {
+          width: 50px;
+          height: 50px;
+          font-size: 1rem;
+        }
+        .music-icon-btn {
+          width: 34px;
+          height: 34px;
+        }
+        .music-controls-row {
+          gap: 10px;
+        }
+        .track-counter {
+          font-size: 0.72rem;
+        }
+        .song-title {
+          font-size: 1rem;
+        }
+        .song-subtitle {
+          font-size: 0.9rem;
+        }
+
+        /* Playlist */
+        .playlist-wrap {
+          margin-top: 14px;
+          gap: 6px;
+        }
+        .playlist-item {
+          padding: 9px 10px;
+          gap: 8px;
+          border-radius: 12px;
+        }
+        .playlist-track-title {
+          font-size: 0.82rem;
+        }
+        .playlist-track-sub {
+          font-size: 0.75rem;
+        }
+
+        /* Videos */
+        .video-wrapper {
+          border-radius: 14px;
+        }
+        .video-card-secondary {
+          max-width: 100%;
+        }
+
+        /* Message */
+        .message-text {
+          font-size: clamp(0.95rem, 4vw, 1.2rem);
+          padding: 0 4px;
+        }
+
+        /* Footer */
+        #footer {
+          padding: 50px 14px 36px;
+        }
+        .closing-quote {
+          font-size: clamp(1.1rem, 5.5vw, 1.8rem);
+        }
+      }
+
+      /* Video placeholder (shown when no src is set) */
+      .video-placeholder {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(15, 0, 30, 0.7);
+        border-radius: 20px;
+        text-align: center;
+        padding: 20px;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      /* Video placeholder hidden when video has a src */
+      video[src]:not([src=""]) ~ .video-placeholder,
+      .video-placeholder.hidden {
+        display: none;
+      }
+
+      /* Visible state utility */
+      .anim-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      /* Music note decoration */
+      .music-note-deco {
+        color: var(--gold);
+        opacity: 0.4;
+        font-size: 1.2rem;
+      }
+
+      /* ═══════════════════════════════════════════
+       PLAYLIST TRACK LIST
+    ═══════════════════════════════════════════ */
+      .playlist-wrap {
+        max-width: 600px;
+        margin: 20px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .playlist-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 16px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 168, 76, 0.12);
+        cursor: pointer;
+        transition:
+          background 0.25s,
+          border-color 0.25s,
+          transform 0.2s;
+      }
+
+      .playlist-item:hover {
+        background: rgba(201, 168, 76, 0.1);
+        border-color: rgba(201, 168, 76, 0.35);
+        transform: translateX(4px);
+      }
+
+      .playlist-item.active {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 168, 76, 0.18) 0%,
+          rgba(45, 0, 87, 0.4) 100%
+        );
+        border-color: var(--gold);
+        box-shadow: 0 0 18px rgba(201, 168, 76, 0.2);
+      }
+
+      .playlist-num {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Lato", sans-serif;
+        font-size: 0.75rem;
+        color: var(--silver);
+        transition:
+          background 0.25s,
+          color 0.25s;
+      }
+
+      .playlist-item.active .playlist-num {
+        background: var(--gold);
+        color: var(--black-deep);
+        border-color: var(--gold);
+        font-weight: 700;
+      }
+
+      .playlist-eq-mini {
+        display: flex;
+        align-items: flex-end;
+        gap: 2px;
+        height: 16px;
+        width: 20px;
+        min-width: 20px;
+      }
+
+      .playlist-eq-mini span {
+        width: 3px;
+        border-radius: 2px;
+        background: var(--gold);
+        height: 4px;
+        display: block;
+      }
+
+      .playlist-item.active.now-playing .playlist-eq-mini span:nth-child(1) {
+        animation: miniEq 0.7s ease-in-out 0s infinite alternate;
+      }
+      .playlist-item.active.now-playing .playlist-eq-mini span:nth-child(2) {
+        animation: miniEq 0.7s ease-in-out 0.15s infinite alternate;
+      }
+      .playlist-item.active.now-playing .playlist-eq-mini span:nth-child(3) {
+        animation: miniEq 0.7s ease-in-out 0.08s infinite alternate;
+      }
+
+      @keyframes miniEq {
+        from {
+          height: 4px;
+        }
+        to {
+          height: 14px;
+        }
+      }
+
+      .playlist-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .playlist-track-title {
+        font-family: "Lato", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--champagne);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .playlist-item.active .playlist-track-title {
+        color: var(--gold);
+      }
+
+      .playlist-track-sub {
+        font-family: "Dancing Script", cursive;
+        font-size: 0.8rem;
+        color: var(--silver);
+        opacity: 0.7;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .playlist-duration {
+        font-family: "Lato", sans-serif;
+        font-size: 0.75rem;
+        color: var(--silver);
+        opacity: 0.6;
+        min-width: 36px;
+        text-align: right;
+      }
+
+      /* Track counter badge */
+      .track-counter {
+        font-family: "Lato", sans-serif;
+        font-size: 0.78rem;
+        color: var(--silver);
+        opacity: 0.6;
+        text-align: center;
+        margin-bottom: 14px;
+        letter-spacing: 0.08em;
+      }
+
+      /* Vinyl swap animation */
+      @keyframes vinylSwapOut {
+        0% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+        40% {
+          transform: scale(1.15) rotate(60deg);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(0.3) rotate(180deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes vinylSwapIn {
+        0% {
+          transform: scale(0.3) rotate(-180deg);
+          opacity: 0;
+        }
+        60% {
+          transform: scale(1.1) rotate(-15deg);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      .vinyl-swap-out {
+        animation: vinylSwapOut 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+      }
+      .vinyl-swap-in {
+        animation: vinylSwapIn 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+      }
+
+      /* Song title fade transition */
+      .song-title,
+      .song-subtitle {
+        transition: opacity 0.3s ease;
+      }
+      .song-fade-out {
+        opacity: 0 !important;
+      }
+      .song-fade-in {
+        animation: songFadeIn 0.4s ease forwards;
+      }
+      @keyframes songFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* ═══════════════════════════════════════════
+       SPLASH OVERLAY
+    ═══════════════════════════════════════════ */
+      #splashOverlay {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: radial-gradient(ellipse at 40% 40%, #2d0057 0%, #120020 40%, #0a0a0a 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: opacity 0.7s ease;
+        overflow: hidden;
+      }
+
+      .splash-inner {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        animation: splashFadeIn 1.2s ease forwards;
+      }
+
+      @keyframes splashFadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .splash-crown {
+        font-size: clamp(3rem, 10vw, 5.5rem);
+        color: var(--gold);
+        filter: drop-shadow(0 0 30px rgba(201,168,76,0.9));
+        animation: crownFloat 3s ease-in-out infinite;
+        line-height: 1;
+      }
+
+      .splash-name {
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        font-size: clamp(2.8rem, 12vw, 7rem);
+        line-height: 1;
+        background: linear-gradient(135deg, #c9a84c 0%, #fff0c0 30%, #e8c97a 55%, #c9a84c 100%);
+        background-size: 300% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: goldShimmer 4s linear infinite;
+        filter: drop-shadow(0 4px 20px rgba(201,168,76,0.6));
+        margin-top: 6px;
+      }
+
+      .splash-subtitle {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(1.3rem, 4vw, 2.2rem);
+        color: #ffe0ec;
+        text-shadow: 0 2px 16px rgba(232,116,138,0.8);
+        letter-spacing: 0.06em;
+        margin-bottom: 16px;
+      }
+
+      .splash-tap {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1.1rem, 3.5vw, 1.7rem);
+        color: var(--champagne);
+        letter-spacing: 0.12em;
+        background: rgba(201,168,76,0.12);
+        border: 1px solid rgba(201,168,76,0.35);
+        border-radius: 50px;
+        padding: 14px 32px;
+        animation: tapPulse 2s ease-in-out infinite;
+        margin-top: 8px;
+      }
+
+      .splash-tap-icon {
+        color: var(--gold);
+        font-style: normal;
+        animation: noteBounce 1.5s ease-in-out infinite alternate;
+      }
+      .splash-tap-icon:last-child {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes tapPulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4), 0 0 20px rgba(201,168,76,0.15); }
+        50%       { box-shadow: 0 0 0 10px rgba(201,168,76,0), 0 0 40px rgba(201,168,76,0.3); }
+      }
+
+      @keyframes noteBounce {
+        from { transform: translateY(0) scale(1); }
+        to   { transform: translateY(-5px) scale(1.2); }
+      }
+
+      .splash-note {
+        font-family: "Lato", sans-serif;
+        font-size: clamp(0.7rem, 2vw, 0.85rem);
+        color: var(--silver);
+        opacity: 0.55;
+        margin-top: 6px;
+        letter-spacing: 0.06em;
+      }
+
+      /* Decorative pulsing rings */
+      .splash-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(201,168,76,0.18);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+        animation: ringExpand 4s ease-out infinite;
+      }
+      .splash-ring-1 { width: 400px; height: 400px; animation-delay: 0s; }
+      .splash-ring-2 { width: 650px; height: 650px; animation-delay: 1.2s; }
+      .splash-ring-3 { width: 900px; height: 900px; animation-delay: 2.4s; }
+
+      @keyframes ringExpand {
+        0%   { opacity: 0.5; transform: translate(-50%,-50%) scale(0.3); }
+        100% { opacity: 0;   transform: translate(-50%,-50%) scale(1.2); }
+      }
+
+    </style>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <!-- ════════════════════════════
+       SPLASH OVERLAY — tap to enter
+       Fires audio instantly on first gesture
+    ════════════════════════════ -->
+    <div id="splashOverlay" role="button" tabindex="0" aria-label="Tap to enter and play music">
+      <div class="splash-inner">
+        <div class="splash-crown">♛</div>
+        <div class="splash-name">Adedayo</div>
+        <div class="splash-subtitle">CrownOfJoy</div>
+        <div class="splash-tap">
+          <span class="splash-tap-icon">♪</span>
+          <span>Tap to Enter</span>
+          <span class="splash-tap-icon">♪</span>
+        </div>
+        <div class="splash-note">Happy Birthday Adedayo</div>
+      </div>
+      <!-- Animated ring pulses -->
+      <div class="splash-ring splash-ring-1"></div>
+      <div class="splash-ring splash-ring-2"></div>
+      <div class="splash-ring splash-ring-3"></div>
+    </div>
+
+    <!-- Floating Petals Container -->
+    <div id="petals-container" aria-hidden="true"></div>
+
+    <!-- Lightbox -->
+    <div
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      <span id="lightbox-close" aria-label="Close lightbox" tabindex="0"
+        >&times;</span
+      >
+      <img id="lightbox-img" src="image5.jpg" alt="Gallery image enlarged" />
+      <div id="lightbox-caption">Adedayo — CrownOfJoy ✦</div>
+    </div>
+
+    <!-- ════════════════════════════
+       NAVBAR
+  ════════════════════════════ -->
+    <nav id="navbar" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo">CrownOfJoy ♛</a>
+      <ul class="nav-links">
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#message">Message</a></li>
+        <li><a href="#music">Music</a></li>
+        <li><a href="#celebration">Celebrate</a></li>
+      </ul>
+    </nav>
+
+    <!-- ════════════════════════════
+       SECTION 1 — HERO
+  ════════════════════════════ -->
+    <section id="hero" aria-label="Birthday hero">
+      <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+      <!-- Sharp hero background image -->
+      
+      <div
+        class="hero-bg"
+        role="img"
+        aria-label="Elegant golden birthday celebration backdrop"
+      ></div>
+
+      <!--
+      OPTIONAL HERO BACKGROUND VIDEO
+      To activate: set src below to your video file URL or relative path (e.g. src="./hero-bg.mp4")
+      The video plays muted, looped, at reduced opacity as a cinematic layer beneath the image.
+    -->
+      <video
+        class="hero-bg-video"
+        id="heroBgVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="none"
+        aria-hidden="true"
+      >
+        <source src="video3.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <!-- Frosted backdrop keeps all text crisp over any background -->
+        <div class="hero-text-backdrop">
+          <span class="crown-icon" aria-label="Crown" id="crownIcon">♛</span>
+
+          <div
+            class="happy-birthday-text"
+            id="happyBirthdayText"
+            aria-live="polite"
+          >
+            Happy Birthday
+          </div>
+
+          <h1 class="name-adedayo" id="nameAdedayo" aria-label="Adedayo">
+            Adedayo
+          </h1>
+
+          <div class="crown-of-joy" id="crownOfJoyText">✦ CrownOfJoy ✦</div>
+
+          <p class="you-are-loved" id="youAreLoved">
+            You are loved <span class="heart-glow" aria-hidden="true">♡</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-dot"></div>
+        <div class="scroll-dot"></div>
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════
+       SECTION 2 — PHOTO GALLERY
+  ════════════════════════════ -->
+    <section id="gallery" aria-label="Photo gallery">
+      <h2
+        class="section-title"
+        id="galleryTitle"
+        style="color: var(--champagne)"
+      >
+        Moments of You
+      </h2>
+      <div class="gold-underline" id="galleryUnderline"></div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div
+          class="gallery-item"
+          data-index="0"
+          role="button"
+          tabindex="0"
+          aria-label="View Adedayo photo 1"
+        >
+          <img
+            class="gallery-img"
+            src="image1.jpg"
+            alt="Adedayo — a beautiful portrait"
+            loading="lazy"
+          />
+          <div class="gallery-overlay" aria-hidden="true"></div>
+        </div>
+        <div
+          class="gallery-item"
+          data-index="1"
+          role="button"
+          tabindex="0"
+          aria-label="View Adedayo photo 2"
+        >
+          <img
+            class="gallery-img"
+            src="image5.jpg"
+            alt="Adedayo — radiant and glowing"
+            loading="lazy"
+          />
+          <div class="gallery-overlay" aria-hidden="true"></div>
+        </div>
+        <div
+          class="gallery-item"
+          data-index="2"
+          role="button"
+          tabindex="0"
+          aria-label="View Adedayo photo 3"
+        >
+          <img
+            class="gallery-img"
+            src="image2.jpg"
+            alt="Adedayo — joyful birthday queen"
+            loading="lazy"
+          />
+          <div class="gallery-overlay" aria-hidden="true"></div>
+        </div>
+        <div
+          class="gallery-item"
+          data-index="3"
+          role="button"
+          tabindex="0"
+          aria-label="View Adedayo photo 4"
+        >
+          <img
+            class="gallery-img"
+            src="image3.jpg"
+            alt="Adedayo — elegance personified"
+            loading="lazy"
+          />
+          <div class="gallery-overlay" aria-hidden="true"></div>
+        </div>
+        <div
+          class="gallery-item"
+          data-index="4"
+          role="button"
+          tabindex="0"
+          aria-label="View Adedayo photo 5"
+        >
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════
+       SECTION 3 — VIDEO MEMORIES
+  ════════════════════════════ -->
+    <section id="videos" aria-label="Video memories">
+      <h2 class="video-title" id="videoTitle">Your Beautiful Story</h2>
+      <div class="gold-underline" id="videoUnderline"></div>
+
+      <!--
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║  HOW TO USE YOUR LOCAL VIDEOS                                    ║
+    ║  ─────────────────────────────────────────────────────────────  ║
+    ║  Browsers CANNOT load videos from absolute local paths like:     ║
+    ║  C:\Users\... or /Users/Desktop/...                              ║
+    ║                                                                  ║
+    ║  To make your videos work, choose one of these options:          ║
+    ║                                                                  ║
+    ║  OPTION A — Place video files alongside index.html               ║
+    ║    Put video1.mp4 and video2.mp4 in the SAME folder as           ║
+    ║    index.html, then set: src="./video1.mp4"                      ║
+    ║                                                                  ║
+    ║  OPTION B — Upload to OnSpace Storage (recommended)              ║
+    ║    Upload via Cloud → Storage panel → copy the CDN URL           ║
+    ║    Then paste that URL as the src below.                         ║
+    ║                                                                  ║
+    ║  OPTION C — Use any online video URL (Dropbox, Drive direct link) ║
+    ╚══════════════════════════════════════════════════════════════════╝
+    -->
+
+      <!-- Primary Video -->
+      <!-- ▼ REPLACE src="" WITH YOUR VIDEO URL OR RELATIVE PATH ▼ -->
+      <div class="video-wrapper" id="videoWrapper1">
+        <video
+          id="vid1"
+          preload="metadata"
+          src="video2.mp4"
+          poster="view1.jpg"
+          muted=""
+          aria-label="Birthday memories video 1"
+          playsinline
+          webkit-playsinline
+        >
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-controls" id="vidControls1">
+          <button
+            class="vid-play-btn"
+            id="vidPlayBtn1"
+            aria-label="Play video 1"
+          >
+            <i class="fas fa-play" id="vidPlayIcon1"></i>
+          </button>
+          <div
+            class="vid-progress"
+            id="vidProgress1"
+            role="slider"
+            aria-label="Video progress"
+          >
+            <div class="vid-progress-fill" id="vidProgressFill1"></div>
+          </div>
+          <div class="vid-time" id="vidTime1">0:00 / 0:00</div>
+        </div>
+        <!-- Placeholder shown when no src is set -->
+        <div class="video-placeholder" id="vidPlaceholder1">
+          <i
+            class="fas fa-film"
+            style="font-size: 2rem; color: var(--gold); opacity: 0.6"
+          ></i>
+          <p
+            style="
+              margin: 10px 0 4px;
+              font-family: &quot;Playfair Display&quot;, serif;
+              font-size: 0.95rem;
+              color: var(--champagne);
+              opacity: 0.7;
+            "
+          >
+            Your Video Here
+          </p>
+          <p
+            style="
+              margin: 0;
+              font-family: &quot;Lato&quot;, sans-serif;
+              font-size: 0.75rem;
+              color: var(--silver);
+              opacity: 0.5;
+            "
+          >
+            Set src="./your-video.mp4" above
+          </p>
+        </div>
+      </div>
+
+      <!-- Secondary Video Card -->
+      <!-- ▼ REPLACE src="" WITH YOUR SECOND VIDEO URL OR RELATIVE PATH ▼ -->
+      <div class="video-card-secondary" id="videoWrapper2">
+        <div
+          class="video-wrapper"
+          style="margin-bottom: 0; animation: none; opacity: 1; max-width: 100%"
+        >
+          <video
+            id="vid2"
+            preload="metadata"
+            src="video1.mp4"
+            poster="view2.jpg"
+            aria-label="Birthday memories video 2"
+            playsinline
+            webkit-playsinline
+          >
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls" id="vidControls2">
+            <button
+              class="vid-play-btn"
+              id="vidPlayBtn2"
+              aria-label="Play video 2"
+            >
+              <i class="fas fa-play" id="vidPlayIcon2"></i>
+            </button>
+            <div
+              class="vid-progress"
+              id="vidProgress2"
+              role="slider"
+              aria-label="Video 2 progress"
+            >
+              <div class="vid-progress-fill" id="vidProgressFill2"></div>
+            </div>
+            <div class="vid-time" id="vidTime2">0:00 / 0:00</div>
+          </div>
+          <!-- Placeholder shown when no src is set -->
+          <div class="video-placeholder" id="vidPlaceholder2">
+            <i
+              class="fas fa-film"
+              style="font-size: 1.6rem; color: var(--gold); opacity: 0.6"
+            ></i>
+            <p
+              style="
+                margin: 8px 0 2px;
+                font-family: &quot;Playfair Display&quot;, serif;
+                font-size: 0.9rem;
+                color: var(--champagne);
+                opacity: 0.7;
+              "
+            >
+              Your Second Video
+            </p>
+            <p
+              style="
+                margin: 0;
+                font-family: &quot;Lato&quot;, sans-serif;
+                font-size: 0.72rem;
+                color: var(--silver);
+                opacity: 0.5;
+              "
+            >
+              Set src="./your-video2.mp4" above
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════
+       SECTION 4 — PERSONAL MESSAGE
+  ════════════════════════════ -->
+    <section id="message" aria-label="Personal birthday message">
+      <!-- Bokeh Blobs -->
+      <div
+        class="bokeh-blob"
+        style="
+          width: 500px;
+          height: 500px;
+          background: var(--violet);
+          top: -100px;
+          left: -150px;
+        "
+        aria-hidden="true"
+      ></div>
+      <div
+        class="bokeh-blob"
+        style="
+          width: 400px;
+          height: 400px;
+          background: var(--blush);
+          bottom: -80px;
+          right: -100px;
+        "
+        aria-hidden="true"
+      ></div>
+      <div
+        class="bokeh-blob"
+        style="
+          width: 300px;
+          height: 300px;
+          background: var(--gold-dark);
+          top: 30%;
+          left: 40%;
+          opacity: 0.15;
+        "
+        aria-hidden="true"
+      ></div>
+
+      <!-- Sparkles -->
+      <div
+        class="sparkle"
+        style="
+          top: 10%;
+          left: 8%;
+          animation-duration: 2.1s;
+          animation-delay: 0s;
+        "
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+      <div
+        class="sparkle"
+        style="
+          top: 20%;
+          right: 10%;
+          animation-duration: 1.8s;
+          animation-delay: 0.4s;
+          color: var(--gold);
+        "
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+      <div
+        class="sparkle"
+        style="
+          bottom: 20%;
+          left: 12%;
+          animation-duration: 2.5s;
+          animation-delay: 0.8s;
+          color: var(--blush);
+        "
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+      <div
+        class="sparkle"
+        style="
+          bottom: 30%;
+          right: 8%;
+          animation-duration: 2.2s;
+          animation-delay: 0.2s;
+        "
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+      <div
+        class="sparkle"
+        style="
+          top: 50%;
+          left: 4%;
+          animation-duration: 1.9s;
+          animation-delay: 1s;
+          color: var(--peach);
+        "
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+      <div
+        class="sparkle"
+        style="
+          top: 60%;
+          right: 4%;
+          animation-duration: 2.3s;
+          animation-delay: 0.6s;
+          color: var(--dusty-pink);
+        "
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: center;
+        "
+      >
+        <span class="quote-marks" aria-hidden="true">"</span>
+
+        <p class="message-text" id="messageText">
+          To Adedayo — CrownOfJoy — You carry warmth everywhere you go. Your
+          laughter is a melody, your heart is a home. On this day and every day,
+          know that you are deeply loved, endlessly celebrated, and forever
+          cherished. Happy Birthday, our Crown. 👑
+        </p>
+
+        <span
+          class="quote-marks"
+          style="transform: rotate(180deg); display: inline-block"
+          aria-hidden="true"
+          >"</span
+        >
+
+        <span class="message-signature" id="messageSignature"
+          >From Us, With Love ♡</span
+        >
+      </div>
+    </section>
+
+    <!-- ════════════════════════════
+       SECTION 5 — MUSIC PLAYER
+  ════════════════════════════ -->
+    <section id="music" aria-label="Music player">
+      <h2 class="section-title" id="musicTitle" style="color: var(--champagne)">
+        <span class="music-note-deco" aria-hidden="true">♩</span>
+        Your Song
+        <span class="music-note-deco" aria-hidden="true">♪</span>
+      </h2>
+      <div class="gold-underline" id="musicUnderline"></div>
+
+      <div class="music-player-card" id="musicCard">
+        <!-- Vinyl -->
+        <div class="vinyl-wrapper">
+          <div
+            class="vinyl-record"
+            id="vinylRecord"
+            aria-label="Vinyl record disc"
+          >
+            <div class="vinyl-label">
+              <span>Adedayo<br />🎵</span>
+            </div>
+          </div>
+          <div class="vinyl-needle" id="vinylNeedle" aria-hidden="true"></div>
+        </div>
+
+        <!-- Track Counter -->
+        <div class="track-counter" id="trackCounter">Track 1 of 3</div>
+
+        <!-- Song Info -->
+        <div class="song-title" id="songTitle">A Song Just For You</div>
+        <div class="song-subtitle" id="songSubtitle">— Adedayo 🎵</div>
+
+        <!-- Equalizer -->
+        <div class="equalizer" id="equalizer" aria-hidden="true">
+          <div class="eq-bar" style="--peak: 32px"></div>
+          <div class="eq-bar" style="--peak: 20px"></div>
+          <div class="eq-bar" style="--peak: 36px"></div>
+          <div class="eq-bar" style="--peak: 24px"></div>
+          <div class="eq-bar" style="--peak: 30px"></div>
+          <div class="eq-bar" style="--peak: 18px"></div>
+          <div class="eq-bar" style="--peak: 34px"></div>
+          <div class="eq-bar" style="--peak: 22px"></div>
+          <div class="eq-bar" style="--peak: 28px"></div>
+          <div class="eq-bar" style="--peak: 16px"></div>
+        </div>
+
+        <!-- Hidden Audio -->
+        <audio
+          id="birthdayAudio"
+          preload="auto"
+          aria-label="Birthday song audio"
+        >
+          <source src="song01.mp3" type="audio/mpeg" />
+        </audio>
+
+        <!-- Progress -->
+        <div
+          class="music-progress"
+          id="musicProgress"
+          role="slider"
+          aria-label="Song progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div class="music-progress-fill" id="musicProgressFill"></div>
+        </div>
+        <div class="music-time-row">
+          <span id="musicCurrent">0:00</span>
+          <span id="musicDuration">0:00</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="music-controls-row">
+          <button
+            class="music-icon-btn"
+            id="prevBtn"
+            title="Previous"
+            aria-label="Previous"
+          >
+            <i class="fas fa-backward"></i>
+          </button>
+          <button
+            class="music-play-btn"
+            id="musicPlayBtn"
+            aria-label="Play birthday song"
+          >
+            <i class="fas fa-play" id="musicPlayIcon"></i>
+          </button>
+          <button
+            class="music-icon-btn"
+            id="nextBtn"
+            title="Next"
+            aria-label="Next"
+          >
+            <i class="fas fa-forward"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Playlist Track List -->
+      <div class="playlist-wrap" id="playlistWrap">
+        <!-- populated by JS -->
+      </div>
+    </section>
+
+    <!-- ════════════════════════════
+       SECTION 6 — CELEBRATION
+  ════════════════════════════ -->
+    <section id="celebration" aria-label="Birthday celebration">
+      <!-- +1 banner — age stays private -->
+      <div class="age-banner" id="ageBanner">
+        Officially a year older today! 🎉
+      </div>
+
+      <!-- Birthday Cake -->
+      <div
+        class="cake-container"
+        id="cakeContainer"
+        role="button"
+        tabindex="0"
+        aria-label="Click to blow out candles and make a wish"
+      >
+        <!-- Candles -->
+        <div class="cake-candles" id="cakeCandles">
+          <div class="candle">
+            <div class="flame" id="flame1"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body"></div>
+          </div>
+          <div class="candle">
+            <div class="flame" id="flame2"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body"></div>
+          </div>
+          <div class="candle">
+            <div class="flame" id="flame3"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body"></div>
+          </div>
+          <div class="candle">
+            <div class="flame" id="flame4"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body"></div>
+          </div>
+        </div>
+
+        <!-- Cake Body -->
+        <div class="cake-body">
+          <div class="cake-tier-top"></div>
+          <div class="cake-tier-bottom"></div>
+        </div>
+        <div class="cake-plate"></div>
+      </div>
+
+      <button
+        class="make-wish-btn"
+        id="makeWishBtn"
+        aria-label="Make a wish — click to blow out candles"
+      >
+        🕯️ Make a Wish!
+      </button>
+
+      <div class="wish-message" id="wishMessage">
+        ✨ Your wish has been heard, CrownOfJoy! ✨<br />
+        <span style="font-size: 0.85em; color: var(--dusty-pink)"
+          >May all your dreams bloom like royalty 🌸👑</span
+        >
+      </div>
+    </section>
+
+    <!-- ════════════════════════════
+       SECTION 7 — FOOTER
+  ════════════════════════════ -->
+    <footer id="footer" aria-label="Footer">
+      <div
+        id="footer-hearts-area"
+        style="position: absolute; inset: 0; pointer-events: none; z-index: 5"
+        aria-hidden="true"
+      ></div>
+
+      <p class="closing-quote" id="closingQuote">
+        Happy Birthday, CrownOfJoy 👑
+      </p>
+
+      <p class="footer-credit">
+        Built with <span>❤️</span> by
+        <strong style="color: var(--gold)">Adeperl Innovations</strong>
+      </p>
+    </footer>
+
+    <!-- ═══════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════ -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ══════════════════════════
+        // GSAP ScrollTrigger Register
+        // ══════════════════════════
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ══════════════════════════
+        // FLOATING PETALS
+        // ══════════════════════════
+        const petalEmojis = ["🌸", "🌺", "✦", "🌷", "🌹", "💕", "✿"];
+        const petalsContainer = document.getElementById("petals-container");
+
+        function createPetal() {
+          const petal = document.createElement("div");
+          petal.className = "petal";
+          petal.textContent =
+            petalEmojis[Math.floor(Math.random() * petalEmojis.length)];
+          petal.style.cssText = `
+        left: ${Math.random() * 100}vw;
+        font-size: ${12 + Math.random() * 14}px;
+        animation-duration: ${6 + Math.random() * 10}s;
+        animation-delay: ${Math.random() * 5}s;
+        opacity: ${0.4 + Math.random() * 0.4};
+      `;
+          petalsContainer.appendChild(petal);
+          setTimeout(() => petal.remove(), 16000);
+        }
+
+        setInterval(createPetal, 600);
+        for (let i = 0; i < 8; i++) setTimeout(createPetal, i * 200);
+
+        // ══════════════════════════
+        // HERO ANIMATIONS
+        // ══════════════════════════
+        setTimeout(() => {
+          const hbText = document.getElementById("happyBirthdayText");
+          hbText.classList.add("typing");
+        }, 1000);
+
+        setTimeout(() => {
+          const nameEl = document.getElementById("nameAdedayo");
+          nameEl.classList.add("visible");
+          gsap.to(nameEl, {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "power3.out",
+          });
+        }, 2200);
+
+        setTimeout(() => {
+          gsap.to("#crownOfJoyText", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+          });
+        }, 2800);
+
+        setTimeout(() => {
+          gsap.to("#youAreLoved", {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+          });
+        }, 3400);
+
+        // ══════════════════════════
+        // CONFETTI — HERO LOAD
+        // ══════════════════════════
+        const confettiCanvas = document.getElementById("confetti-canvas");
+        const myConfetti = confetti.create(confettiCanvas, {
+          resize: true,
+          useWorker: true,
+        });
+
+        function launchHeroConfetti() {
+          const colors = [
+            "#c9a84c",
+            "#e8748a",
+            "#f2b5c0",
+            "#9b59b6",
+            "#f0997b",
+            "#f5e6c8",
+            "#ffb347",
+          ];
+          myConfetti({
+            particleCount: 120,
+            spread: 100,
+            startVelocity: 45,
+            origin: { y: 0.2, x: 0.5 },
+            colors,
+            scalar: 1.1,
+            shapes: ["circle", "square"],
+          });
+          setTimeout(() => {
+            myConfetti({
+              particleCount: 60,
+              spread: 70,
+              origin: { y: 0.25, x: 0.3 },
+              colors,
+              scalar: 0.9,
+            });
+            myConfetti({
+              particleCount: 60,
+              spread: 70,
+              origin: { y: 0.25, x: 0.7 },
+              colors,
+              scalar: 0.9,
+            });
+          }, 600);
+        }
+
+        setTimeout(launchHeroConfetti, 1500);
+
+        // ══════════════════════════
+        // NAVBAR SCROLL
+        // ══════════════════════════
+        const navbar = document.getElementById("navbar");
+        window.addEventListener(
+          "scroll",
+          () => {
+            navbar.classList.toggle("scrolled", window.scrollY > 60);
+          },
+          { passive: true },
+        );
+
+        // ══════════════════════════
+        // GSAP SCROLL ANIMATIONS
+        // ══════════════════════════
+
+        gsap.to("#galleryTitle", {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: { trigger: "#gallery", start: "top 75%", once: true },
+        });
+        gsap.from("#galleryTitle", { y: 40 });
+
+        gsap.to("#galleryUnderline", {
+          opacity: 1,
+          scrollTrigger: { trigger: "#gallery", start: "top 75%", once: true },
+          delay: 0.3,
+        });
+
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        galleryItems.forEach((item, i) => {
+          gsap.to(item, {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            delay: i * 0.12,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: "#galleryGrid",
+              start: "top 80%",
+              once: true,
+            },
+          });
+        });
+
+        gsap.to("#videoTitle", {
+          opacity: 1,
+          scrollTrigger: { trigger: "#videos", start: "top 75%", once: true },
+        });
+        gsap.from("#videoTitle", { y: 40 });
+
+        gsap.to("#videoUnderline", {
+          opacity: 1,
+          scrollTrigger: { trigger: "#videos", start: "top 75%", once: true },
+          delay: 0.3,
+        });
+
+        gsap.to("#videoWrapper1", {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          scrollTrigger: {
+            trigger: "#videoWrapper1",
+            start: "top 80%",
+            once: true,
+          },
+        });
+        gsap.from("#videoWrapper1", { y: 50 });
+
+        gsap.to("#videoWrapper2", {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: "#videoWrapper2",
+            start: "top 80%",
+            once: true,
+          },
+        });
+        gsap.from("#videoWrapper2", { y: 50 });
+
+        gsap.to("#messageText", {
+          opacity: 1,
+          duration: 1.2,
+          scrollTrigger: { trigger: "#message", start: "top 70%", once: true },
+        });
+        gsap.to("#messageSignature", {
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger: { trigger: "#message", start: "top 70%", once: true },
+        });
+
+        gsap.to("#musicTitle", {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          scrollTrigger: { trigger: "#music", start: "top 75%", once: true },
+        });
+        gsap.from("#musicTitle", { y: 40 });
+
+        gsap.to("#musicUnderline", {
+          opacity: 1,
+          scrollTrigger: { trigger: "#music", start: "top 75%", once: true },
+          delay: 0.3,
+        });
+
+        gsap.to("#musicCard", {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          scrollTrigger: {
+            trigger: "#musicCard",
+            start: "top 80%",
+            once: true,
+          },
+        });
+        gsap.from("#musicCard", { y: 60 });
+
+        // Age banner — +1 pop animation
+        gsap.to("#ageBanner", {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          scrollTrigger: {
+            trigger: "#celebration",
+            start: "top 75%",
+            once: true,
+          },
+          onStart: () => animateAge(),
+        });
+        gsap.from("#ageBanner", { y: 50 });
+
+        gsap.to("#makeWishBtn", {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          delay: 0.4,
+          scrollTrigger: {
+            trigger: "#celebration",
+            start: "top 75%",
+            once: true,
+          },
+        });
+        gsap.from("#makeWishBtn", { y: 30 });
+
+        gsap.to("#closingQuote", {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          scrollTrigger: { trigger: "#footer", start: "top 80%", once: true },
+        });
+        gsap.from("#closingQuote", { y: 40 });
+
+        // ══════════════════════════
+        // LIGHTBOX
+        // ══════════════════════════
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxClose = document.getElementById("lightbox-close");
+
+        galleryItems.forEach((item) => {
+          item.addEventListener("click", () => openLightbox(item));
+          item.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") openLightbox(item);
+          });
+        });
+
+        function openLightbox(item) {
+          const img = item.querySelector(".gallery-img");
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.classList.add("active");
+          document.body.style.overflow = "hidden";
+          lightboxClose.focus();
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+
+        lightboxClose.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeLightbox();
+        });
+
+        // ══════════════════════════
+        // VIDEO — SCROLL-TO-PLAY (no controls, never pauses music)
+        // Videos are muted and autoplay only when scrolled into view.
+        // The music player is NEVER interrupted.
+        // ══════════════════════════
+        function setupScrollVideo(vidId, placeholderId) {
+          const vid = document.getElementById(vidId);
+          const placeholder = document.getElementById(placeholderId);
+          if (!vid) return;
+
+          // Ensure always muted so browser allows autoplay and music is unaffected
+          vid.muted = true;
+          vid.setAttribute("muted", "");
+          vid.setAttribute("playsinline", "");
+          vid.setAttribute("webkit-playsinline", "");
+
+          // Show/hide placeholder
+          function checkSrc() {
+            const hasSrc = vid.src && vid.src !== "" && !vid.src.endsWith("/");
+            if (placeholder) placeholder.style.display = hasSrc ? "none" : "flex";
+          }
+          checkSrc();
+
+          vid.addEventListener("loadedmetadata", () => {
+            if (placeholder) placeholder.style.display = "none";
+          });
+
+          vid.addEventListener("error", () => {
+            if (placeholder) {
+              placeholder.style.display = "flex";
+              placeholder.innerHTML = `
+                <i class="fas fa-exclamation-triangle" style="font-size:1.5rem;color:var(--blush);opacity:0.7;"></i>
+                <p style="margin:8px 0 2px;font-family:'Playfair Display',serif;font-size:0.9rem;color:var(--champagne);opacity:0.7;">Video not found</p>
+                <p style="margin:0;font-family:'Lato',sans-serif;font-size:0.72rem;color:var(--silver);opacity:0.5;">Check the src path or upload to OnSpace Storage</p>
+              `;
+            }
+          });
+
+          // IntersectionObserver: play when ≥40% visible, pause when out of view
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!vid.src || vid.src === "" || vid.src.endsWith("/")) return;
+                if (entry.isIntersecting) {
+                  // Play muted — NEVER touch the audio player
+                  vid.play().catch(() => {});
+                } else {
+                  vid.pause();
+                }
+              });
+            },
+            { threshold: 0.4 }
+          );
+          observer.observe(vid);
+        }
+
+        setupScrollVideo("vid1", "vidPlaceholder1");
+        setupScrollVideo("vid2", "vidPlaceholder2");
+
+        // ══════════════════════════════════════════════════════════
+        // PLAYLIST — add/update song entries here
+        // For each song: set src to your audio file URL or path.
+        // Leave src as '' for demo/visualizer mode (no real file).
+        // ══════════════════════════════════════════════════════════
+        const playlist = [
+          {
+            title: "A Song Just For You",
+            subtitle: "— Adedayo 🎵",
+            src: "song01.mp3",
+            duration: "—",
+          },
+          {
+            title: "CrownOfJoy Serenade",
+            subtitle: "— For My Queen 👑",
+            src: "song02.mp3",
+            duration: "—",
+          },
+          {
+            title: "Birthday Melody",
+            subtitle: "— With All Our Love",
+            src: "song03.mp3",
+            duration: "—",
+          },
+        ];
+        let currentTrackIndex = 0;
+
+        // ══════════════════════════
+        // MUSIC PLAYER — DOM refs
+        // ══════════════════════════
+        const audio = document.getElementById("birthdayAudio");
+        const musicPlayBtn = document.getElementById("musicPlayBtn");
+        const musicPlayIcon = document.getElementById("musicPlayIcon");
+        const musicProgress = document.getElementById("musicProgress");
+        const musicFill = document.getElementById("musicProgressFill");
+        const musicCurrent = document.getElementById("musicCurrent");
+        const musicDuration = document.getElementById("musicDuration");
+        const vinylRecord = document.getElementById("vinylRecord");
+        const vinylNeedle = document.getElementById("vinylNeedle");
+        const vinylLabel = vinylRecord.querySelector(".vinyl-label");
+        const eqBars = document.querySelectorAll(".eq-bar");
+        const songTitleEl = document.getElementById("songTitle");
+        const songSubtitleEl = document.getElementById("songSubtitle");
+        const trackCounter = document.getElementById("trackCounter");
+        const playlistWrap = document.getElementById("playlistWrap");
+
+        let isPlaying = false;
+        let eqInterval = null;
+        let demoInterval = null;
+        let demoProgress = 0;
+
+        function formatTime(s) {
+          if (isNaN(s) || s === 0) return "0:00";
+          const m = Math.floor(s / 60);
+          const sec = Math.floor(s % 60);
+          return `${m}:${sec.toString().padStart(2, "0")}`;
+        }
+
+        function startEqualizer() {
+          eqBars.forEach((bar) => bar.classList.add("active"));
+          eqInterval = setInterval(() => {
+            eqBars.forEach((bar) => {
+              bar.style.height = 8 + Math.random() * 28 + "px";
+            });
+          }, 150);
+        }
+
+        function stopEqualizer() {
+          eqBars.forEach((bar) => {
+            bar.classList.remove("active");
+            bar.style.height = "8px";
+          });
+          clearInterval(eqInterval);
+        }
+
+        function setPlaying(state) {
+          isPlaying = state;
+          if (state) {
+            vinylRecord.classList.add("vinyl-spinning");
+            vinylNeedle.style.transform = "rotate(-20deg)";
+            musicPlayIcon.className = "fas fa-pause";
+            startEqualizer();
+          } else {
+            vinylRecord.classList.remove("vinyl-spinning");
+            vinylNeedle.style.transform = "rotate(-35deg)";
+            musicPlayIcon.className = "fas fa-play";
+            stopEqualizer();
+          }
+          // Update mini-eq state in playlist
+          document.querySelectorAll(".playlist-item").forEach((item, i) => {
+            item.classList.toggle(
+              "now-playing",
+              state && i === currentTrackIndex,
+            );
+          });
+        }
+
+        function hasRealSrc() {
+          const s = playlist[currentTrackIndex].src;
+          return s && s !== "";
+        }
+
+        function simulateDemoPlayback(startFrom) {
+          demoProgress = startFrom || 0;
+          musicDuration.textContent = "3:45";
+          clearInterval(demoInterval);
+          demoInterval = setInterval(() => {
+            if (!isPlaying) {
+              clearInterval(demoInterval);
+              return;
+            }
+            demoProgress += 1;
+            const totalSecs = 225;
+            musicFill.style.width = (demoProgress / totalSecs) * 100 + "%";
+            musicCurrent.textContent = formatTime(demoProgress);
+            if (demoProgress >= totalSecs) {
+              clearInterval(demoInterval);
+              setPlaying(false);
+              demoProgress = 0;
+              // Auto-advance to next track
+              goToTrack((currentTrackIndex + 1) % playlist.length, true);
+            }
+          }, 1000);
+        }
+
+        // ══════════════════════════
+        // BUILD PLAYLIST UI
+        // ══════════════════════════
+        function buildPlaylist() {
+          playlistWrap.innerHTML = "";
+          playlist.forEach((track, i) => {
+            const item = document.createElement("div");
+            item.className =
+              "playlist-item" + (i === currentTrackIndex ? " active" : "");
+            item.setAttribute("role", "button");
+            item.setAttribute("tabindex", "0");
+            item.setAttribute(
+              "aria-label",
+              `Play track ${i + 1}: ${track.title}`,
+            );
+            item.dataset.index = i;
+            item.innerHTML = `
+          <div class="playlist-num">${i + 1}</div>
+          <div class="playlist-eq-mini" style="display:${i === currentTrackIndex ? "flex" : "none"}">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="playlist-info">
+            <div class="playlist-track-title">${track.title}</div>
+            <div class="playlist-track-sub">${track.subtitle}</div>
+          </div>
+          <div class="playlist-duration" id="plDur${i}">${track.duration}</div>
+        `;
+            item.addEventListener("click", () => goToTrack(i, true));
+            item.addEventListener("keydown", (e) => {
+              if (e.key === "Enter" || e.key === " ") goToTrack(i, true);
+            });
+            playlistWrap.appendChild(item);
+          });
+        }
+
+        function updatePlaylistActive() {
+          const items = document.querySelectorAll(".playlist-item");
+          items.forEach((item, i) => {
+            const eqMini = item.querySelector(".playlist-eq-mini");
+            item.classList.toggle("active", i === currentTrackIndex);
+            item.classList.remove("now-playing");
+            if (eqMini)
+              eqMini.style.display = i === currentTrackIndex ? "flex" : "none";
+          });
+        }
+
+        // ══════════════════════════
+        // LOAD & SWITCH TRACK
+        // ══════════════════════════
+        function loadTrack(index) {
+          currentTrackIndex = index;
+          const track = playlist[index];
+
+          // Update audio source
+          audio.pause();
+          audio.currentTime = 0;
+          const srcEl = audio.querySelector("source");
+          if (srcEl) srcEl.src = track.src || "";
+          if (track.src) audio.load();
+
+          // Reset progress UI
+          musicFill.style.width = "0%";
+          musicCurrent.textContent = "0:00";
+          musicDuration.textContent =
+            track.duration !== "—" ? track.duration : "0:00";
+          demoProgress = 0;
+          clearInterval(demoInterval);
+
+          // Update counter
+          trackCounter.textContent = `Track ${index + 1} of ${playlist.length}`;
+        }
+
+        function animateVinylSwap(cb) {
+          // Spin out
+          vinylRecord.classList.remove("vinyl-spinning", "vinyl-swap-in");
+          vinylRecord.classList.add("vinyl-swap-out");
+
+          // Fade song info
+          songTitleEl.classList.add("song-fade-out");
+          songSubtitleEl.classList.add("song-fade-out");
+
+          setTimeout(() => {
+            cb(); // load new track data
+
+            const track = playlist[currentTrackIndex];
+            // Update vinyl label text
+            vinylLabel.innerHTML = `<span>${track.title.split(" ").slice(-2).join("<br/>")}\n🎵</span>`;
+
+            // Update song info display
+            songTitleEl.textContent = track.title;
+            songSubtitleEl.textContent = track.subtitle;
+
+            // Spin in
+            vinylRecord.classList.remove("vinyl-swap-out");
+            vinylRecord.classList.add("vinyl-swap-in");
+
+            songTitleEl.classList.remove("song-fade-out");
+            songSubtitleEl.classList.remove("song-fade-out");
+            songTitleEl.classList.add("song-fade-in");
+            songSubtitleEl.classList.add("song-fade-in");
+            setTimeout(() => {
+              songTitleEl.classList.remove("song-fade-in");
+              songSubtitleEl.classList.remove("song-fade-in");
+              vinylRecord.classList.remove("vinyl-swap-in");
+            }, 450);
+          }, 420);
+        }
+
+        function goToTrack(index, autoPlay) {
+          const wasPlaying = isPlaying;
+          setPlaying(false);
+          clearInterval(demoInterval);
+
+          animateVinylSwap(() => {
+            loadTrack(index);
+            updatePlaylistActive();
+          });
+
+          setTimeout(() => {
+            if (autoPlay || wasPlaying) {
+              startCurrentTrack();
+            }
+          }, 500);
+        }
+
+        function startCurrentTrack() {
+          if (hasRealSrc()) {
+            audio.currentTime = 0;
+            audio
+              .play()
+              .then(() => setPlaying(true))
+              .catch(() => {
+                isPlaying = true;
+                setPlaying(true);
+                simulateDemoPlayback(0);
+              });
+          } else {
+            isPlaying = true;
+            setPlaying(true);
+            simulateDemoPlayback(0);
+          }
+        }
+
+        // ══════════════════════════
+        // CONTROLS
+        // ══════════════════════════
+        musicPlayBtn.addEventListener("click", () => {
+          // Pause any playing videos when audio is activated
+          document.querySelectorAll("video:not(.hero-bg-video)").forEach(v => {
+            if (!v.paused) {
+              v.pause();
+              document.querySelectorAll("[id^='vidPlayIcon']").forEach(ic => ic.className = "fas fa-play");
+            }
+          });
+          if (hasRealSrc()) {
+            if (audio.paused) {
+              audio.play();
+              setPlaying(true);
+            } else {
+              audio.pause();
+              setPlaying(false);
+            }
+          } else {
+            if (isPlaying) {
+              clearInterval(demoInterval);
+              setPlaying(false);
+            } else {
+              isPlaying = true;
+              setPlaying(true);
+              simulateDemoPlayback(demoProgress);
+            }
+          }
+        });
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+          const prev =
+            (currentTrackIndex - 1 + playlist.length) % playlist.length;
+          goToTrack(prev, isPlaying);
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+          const next = (currentTrackIndex + 1) % playlist.length;
+          goToTrack(next, isPlaying);
+        });
+
+        audio.addEventListener("timeupdate", () => {
+          if (audio.duration) {
+            musicFill.style.width =
+              (audio.currentTime / audio.duration) * 100 + "%";
+            musicCurrent.textContent = formatTime(audio.currentTime);
+            musicDuration.textContent = formatTime(audio.duration);
+            // Update stored duration in playlist
+            playlist[currentTrackIndex].duration = formatTime(audio.duration);
+            const durEl = document.getElementById("plDur" + currentTrackIndex);
+            if (durEl) durEl.textContent = formatTime(audio.duration);
+          }
+        });
+
+        musicProgress.addEventListener("click", (e) => {
+          if (hasRealSrc()) {
+            const rect = musicProgress.getBoundingClientRect();
+            audio.currentTime =
+              ((e.clientX - rect.left) / rect.width) * audio.duration;
+          }
+        });
+
+        audio.addEventListener("ended", () => {
+          const next = (currentTrackIndex + 1) % playlist.length;
+          goToTrack(next, true);
+        });
+
+        // ══════════════════════════
+        // INIT PLAYLIST UI
+        // ══════════════════════════
+        buildPlaylist();
+        loadTrack(0);
+
+        // ══════════════════════════════════════════
+        // SPLASH OVERLAY — tap to enter & autoplay
+        // Browsers block audio without a user gesture.
+        // The splash is that gesture — one tap fires
+        // the audio instantly on every browser/device.
+        // ══════════════════════════════════════════
+        const splashOverlay = document.getElementById("splashOverlay");
+
+        // Pick a random track from the playlist to start on
+        const randomStart = Math.floor(Math.random() * playlist.length);
+        loadTrack(randomStart);
+
+        function dismissSplashAndPlay() {
+          // Animate overlay out
+          splashOverlay.style.opacity = "0";
+          splashOverlay.style.pointerEvents = "none";
+          setTimeout(() => { splashOverlay.style.display = "none"; }, 700);
+
+          // Fire audio — this is inside a direct user gesture so browsers allow it
+          if (hasRealSrc()) {
+            audio.currentTime = 0;
+            audio.play()
+              .then(() => setPlaying(true))
+              .catch(() => {
+                isPlaying = true;
+                setPlaying(true);
+                simulateDemoPlayback(0);
+              });
+          } else {
+            isPlaying = true;
+            setPlaying(true);
+            simulateDemoPlayback(0);
+          }
+        }
+
+        splashOverlay.addEventListener("click", dismissSplashAndPlay);
+        splashOverlay.addEventListener("touchstart", dismissSplashAndPlay, { passive: true });
+
+        // ══════════════════════════
+        // HERO BACKGROUND VIDEO
+        // (only plays if a src is provided)
+        // ══════════════════════════
+        const heroBgVideo = document.getElementById("heroBgVideo");
+        if (heroBgVideo) {
+          const heroSrc = heroBgVideo.querySelector("source");
+          if (!heroSrc || !heroSrc.src || heroSrc.getAttribute("src") === "") {
+            // No src set — hide the video element so image shows cleanly
+            heroBgVideo.style.display = "none";
+          } else {
+            heroBgVideo.style.display = "block";
+            heroBgVideo.load();
+          }
+        }
+
+        // ══════════════════════════
+        // PAGE VISIBILITY API
+        // ══════════════════════════
+        let _wasPlayingBeforeHide = false;
+        let _demoProgressSnapshot = 0;
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) {
+            if (isPlaying) {
+              _wasPlayingBeforeHide = true;
+              _demoProgressSnapshot = demoProgress;
+              if (hasRealSrc()) audio.pause();
+              else clearInterval(demoInterval);
+              setPlaying(false);
+            } else {
+              _wasPlayingBeforeHide = false;
+            }
+          } else {
+            if (_wasPlayingBeforeHide) {
+              _wasPlayingBeforeHide = false;
+              if (hasRealSrc()) {
+                audio
+                  .play()
+                  .then(() => setPlaying(true))
+                  .catch(() => {});
+              } else {
+                isPlaying = true;
+                setPlaying(true);
+                simulateDemoPlayback(_demoProgressSnapshot);
+              }
+            }
+          }
+        });
+
+        window.addEventListener("beforeunload", () => {
+          if (hasRealSrc()) {
+            audio.pause();
+            audio.currentTime = 0;
+          }
+        });
+
+        // ══════════════════════════
+        // AGE BANNER — +1 pop animation
+        // ══════════════════════════
+        function animateAge() {
+          const el = document.getElementById("ageCounter");
+          gsap.from(el, {
+            scale: 0,
+            rotation: -15,
+            duration: 0.7,
+            ease: "back.out(1.7)",
+            delay: 0.2,
+          });
+        }
+
+        // ══════════════════════════
+        // BIRTHDAY CAKE — MAKE A WISH
+        // ══════════════════════════
+        const cakeContainer = document.getElementById("cakeContainer");
+        const makeWishBtn = document.getElementById("makeWishBtn");
+        const wishMessage = document.getElementById("wishMessage");
+        const flames = [
+          document.getElementById("flame1"),
+          document.getElementById("flame2"),
+          document.getElementById("flame3"),
+          document.getElementById("flame4"),
+        ];
+        let candlesBlown = false;
+
+        function blowCandles() {
+          if (candlesBlown) return;
+          candlesBlown = true;
+
+          flames.forEach((flame, i) => {
+            setTimeout(() => {
+              flame.classList.add("blown-out");
+
+              const smoke = document.createElement("div");
+              smoke.className = "smoke";
+              flame.parentElement.style.position = "relative";
+              flame.parentElement.appendChild(smoke);
+              setTimeout(() => smoke.remove(), 1600);
+            }, i * 120);
+          });
+
+          setTimeout(() => {
+            const colors = [
+              "#c9a84c",
+              "#e8748a",
+              "#f2b5c0",
+              "#9b59b6",
+              "#f0997b",
+              "#f5e6c8",
+              "#ffb347",
+              "#ff6b35",
+            ];
+            confetti({
+              particleCount: 180,
+              spread: 120,
+              startVelocity: 55,
+              origin: { x: 0.5, y: 0.6 },
+              colors,
+              shapes: ["circle", "square", "star"],
+              scalar: 1.2,
+            });
+            confetti({
+              particleCount: 80,
+              angle: 60,
+              spread: 70,
+              origin: { x: 0.1, y: 0.7 },
+              colors,
+            });
+            confetti({
+              particleCount: 80,
+              angle: 120,
+              spread: 70,
+              origin: { x: 0.9, y: 0.7 },
+              colors,
+            });
+          }, 400);
+
+          wishMessage.classList.add("active");
+          makeWishBtn.style.display = "none";
+        }
+
+        cakeContainer.addEventListener("click", blowCandles);
+        cakeContainer.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") blowCandles();
+        });
+        makeWishBtn.addEventListener("click", blowCandles);
+
+        // ══════════════════════════
+        // FOOTER HEART TRAIL
+        // ══════════════════════════
+        const footer = document.getElementById("footer");
+        const footerHeartsArea = document.getElementById("footer-hearts-area");
+
+        footer.addEventListener("mousemove", (e) => {
+          const rect = footer.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const heart = document.createElement("div");
+          heart.className = "footer-heart-trail";
+          heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
+          heart.style.cssText = `left:${x}px;top:${y}px;color:hsl(${Math.random() * 60 + 320},80%,70%);font-size:${12 + Math.random() * 10}px;`;
+          footerHeartsArea.appendChild(heart);
+          setTimeout(() => heart.remove(), 1500);
+        });
+      }); // end DOMContentLoaded
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </body>
+</html>
